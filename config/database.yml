@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  host: 127.0.0.1
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: RKIO"W;7Z6NQSY_l
+
+development:
+  <<: *default
+  database: suzukitest_development
+
+test:
+  <<: *default
+  database: todo-rails_test
+
+staging:
+  <<: *default
+  database: todo-rails_staging
+
+production:
+  <<: *default
+  database: todo-rails_production
